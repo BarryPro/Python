@@ -14,6 +14,7 @@ def getImg():
     html = urllib2.urlopen('http://www.uustv.com/',data='word=%s&sizes=60&fonts=jfcs.ttf&fontcolor=%%23000000' %name).read()
     reg = r'<div class="tu">﻿<img src="(.*?)"'#通过正则表达式来获取图片的相对路径
     imgurl = 'http://www.uustv.com/%s' %re.findall(reg,html)[0]
+    #现由utf-8解码到字节码的形式在把字节码转化成gbk的形式（因为微软的文件格式的gbk）
     urllib.urlretrieve(url=imgurl,filename='%s.gif' %name.decode('utf-8').encode('gbk'))
 
 root = Tk() #创建窗口
