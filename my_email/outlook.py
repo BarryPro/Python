@@ -23,5 +23,7 @@ def send_mail(text,to_mail):
         print '发送完成'
     except Exception, e:
         print e
-text = '<a href="https://www.baidu.com">baidu</a>'
-send_mail(text,mail_list)
+
+# text = '<a href="https://www.baidu.com">baidu</a>'
+# send_mail(text,mail_list)
+
