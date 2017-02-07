@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="sample_database">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <table id="3" parent="2" name="department"/>
+    <table id="4" parent="2" name="employee"/>
+    <table id="5" parent="2" name="user"/>
+    <column id="6" parent="3" name="departmentid">
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="7" parent="3" name="name">
+      <Position>1</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <column id="8" parent="3" name="manager">
+      <Position>2</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <index id="9" parent="3" name="deptid">
+      <ColNames>departmentid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="10" parent="3" name="deptmgr">
+      <ColNames>manager</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <column id="11" parent="4" name="empid">
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="12" parent="4" name="firstname">
+      <Position>1</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <column id="13" parent="4" name="lastname">
+      <Position>2</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <column id="14" parent="4" name="dept">
+      <Position>3</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="15" parent="4" name="manager">
+      <Position>4</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="16" parent="4" name="phone">
+      <Position>5</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <index id="17" parent="4" name="empid">
+      <ColNames>empid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="18" parent="4" name="deptfk">
+      <ColNames>dept</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="19" parent="4" name="mgr">
+      <ColNames>manager</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <column id="20" parent="5" name="userid">
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <column id="21" parent="5" name="username">
+      <Position>1</Position>
+      <DataType>VARCHAR(0,-1)|12</DataType>
+    </column>
+    <column id="22" parent="5" name="employeeid">
+      <Position>2</Position>
+      <DataType>INTEGER(0,-1)|4</DataType>
+    </column>
+    <index id="23" parent="5" name="userid">
+      <ColNames>userid</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="5" name="emplid">
+      <ColNames>employeeid</ColNames>
+      <Unique>1</Unique>
+    </index>
+  </database-model>
+</dataSource>

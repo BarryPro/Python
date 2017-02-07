@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="video@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.0">
+    <root id="1"/>
+    <schema id="2" parent="1" name="video">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="audio"/>
+    <schema id="4" parent="1" name="bbs"/>
+    <schema id="5" parent="1" name="hpet"/>
+    <schema id="6" parent="1" name="information_schema"/>
+    <schema id="7" parent="1" name="mysql"/>
+    <schema id="8" parent="1" name="performance_schema"/>
+    <schema id="9" parent="1" name="stu"/>
+    <schema id="10" parent="1" name="sys"/>
+    <schema id="11" parent="1" name="test"/>
+    <table id="12" parent="2" name="_type"/>
+    <table id="13" parent="2" name="article"/>
+    <table id="14" parent="2" name="movies"/>
+    <table id="15" parent="2" name="review"/>
+    <table id="16" parent="2" name="user"/>
+    <routine id="17" parent="2" name="pro_pagenum1">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="18" parent="2" name="pro_pagenum2">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="19" parent="2" name="pro_pagenum3">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <routine id="20" parent="2" name="pro_upload_movies">
+      <RoutineKind>procedure</RoutineKind>
+    </routine>
+    <column id="21" parent="12" name="Tid">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <column id="22" parent="12" name="Vid">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <key id="23" parent="12" name="PRIMARY">
+      <ColNames>Vid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="24" parent="13" name="Aid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="25" parent="13" name="Acontent">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="26" parent="13" name="Uid">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="27" parent="13" name="Agree">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <column id="28" parent="13" name="Adate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="29" parent="13" name="Vid">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="13" name="Disagree">
+      <Position>7</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+    </column>
+    <index id="31" parent="13" name="a_m_fk">
+      <ColNames>Vid</ColNames>
+    </index>
+    <index id="32" parent="13" name="a_u_fk">
+      <ColNames>Uid</ColNames>
+    </index>
+    <key id="33" parent="13" name="PRIMARY">
+      <ColNames>Aid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="34" parent="14" name="Vid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="35" parent="14" name="Vname">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="36" parent="14" name="Vinfo">
+      <Position>3</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="37" parent="14" name="Vpic">
+      <Position>4</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <column id="38" parent="14" name="Vdate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="39" parent="14" name="id">
+      <Position>6</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="40" parent="14" name="Vsrc">
+      <Position>7</Position>
+      <DataType>text|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="41" parent="14" name="views">
+      <Position>8</Position>
+      <DataType>decimal(20)|0</DataType>
+      <DefaultExpression>&apos;1&apos;</DefaultExpression>
+    </column>
+    <index id="42" parent="14" name="FKmovies512969">
+      <ColNames>Vid</ColNames>
+    </index>
+    <index id="43" parent="14" name="FKmovies654564">
+      <ColNames>id</ColNames>
+    </index>
+    <index id="44" parent="14" name="u_v_fk">
+      <ColNames>id</ColNames>
+    </index>
+    <key id="45" parent="14" name="PRIMARY">
+      <ColNames>Vid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="46" parent="14" name="u_m_fk">
+      <ColNames>id</ColNames>
+      <RefSchemaName>video</RefSchemaName>
+      <RefTableName>user</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="47" parent="15" name="Vid">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="48" parent="15" name="Vdirector">
+      <Position>2</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="49" parent="15" name="Vactor">
+      <Position>3</Position>
+      <DataType>longtext|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="50" parent="15" name="Vamount">
+      <Position>4</Position>
+      <DataType>varchar(50)|0</DataType>
+    </column>
+    <index id="51" parent="15" name="FKreview438485">
+      <ColNames>Vid</ColNames>
+    </index>
+    <key id="52" parent="15" name="PRIMARY">
+      <ColNames>Vid</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="53" parent="16" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="54" parent="16" name="username">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="55" parent="16" name="password">
+      <Position>3</Position>
+      <DataType>varchar(70)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="56" parent="16" name="pagenum">
+      <Position>4</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;8&apos;</DefaultExpression>
+    </column>
+    <column id="57" parent="16" name="pic">
+      <Position>5</Position>
+      <DataType>longblob|0</DataType>
+    </column>
+    <key id="58" parent="16" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <argument id="59" parent="17" name="Vtype">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="60" parent="17" name="cur_page">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="61" parent="17" name="Uid">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="62" parent="17" name="row_num">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="63" parent="17" name="row_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="64" parent="17" name="page_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="65" parent="18" name="txt">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="66" parent="18" name="cur_page">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="67" parent="18" name="Uid">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="68" parent="18" name="row_num">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="69" parent="18" name="row_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="70" parent="18" name="page_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="71" parent="19" name="Uid">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="72" parent="19" name="a_Vid">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="73" parent="19" name="cur_page">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="74" parent="19" name="page_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="75" parent="19" name="row_total">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="76" parent="19" name="a_pagenum">
+      <ArgumentDirection>O</ArgumentDirection>
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="77" parent="20" name="_Vname">
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="78" parent="20" name="_Vinfo">
+      <DataType>longtext|0</DataType>
+    </argument>
+    <argument id="79" parent="20" name="_Vpic">
+      <DataType>longblob|0</DataType>
+    </argument>
+    <argument id="80" parent="20" name="_Vsrc">
+      <DataType>text|0</DataType>
+    </argument>
+    <argument id="81" parent="20" name="_id">
+      <DataType>int(11)|0</DataType>
+    </argument>
+    <argument id="82" parent="20" name="_mytype">
+      <DataType>varchar(50)|0</DataType>
+    </argument>
+    <argument id="83" parent="20" name="_Vdirector">
+      <DataType>longtext|0</DataType>
+    </argument>
+    <argument id="84" parent="20" name="_Vactor">
+      <DataType>longtext|0</DataType>
+    </argument>
+  </database-model>
+</dataSource>
