@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="Keywords" content="{{ title }}">
+    <meta name="Description" content="{{ title }}">
+    <link rel="shortcut icon" href="/favicon.ico"/>
+    <style>
+        * {
+            margin: 0px;
+            font-family: "微软雅黑";
+            background: #b49ea7;
+        }
+
+        h1 {
+            font-weight: 300;
+            text-align: center;
+            margin: 30px;
+        }
+
+        .content {
+            width: 880px;
+            height: 540px;
+            margin: 50px auto;
+        }
+
+        .ts {
+            color: red;
+            font-size: 30px;
+        }
+    </style>
+    <title>{{ title }}</title>
+</head>
+<body>
+<h1>{{ title }}</h1>
+<div class="content">
+    {{ content | safe }}
+
+    <div class="ts">提示:该资源无法直接下载,请使用迅雷下载!</div>
+    <a href="{{ link }}" style="font-size:30px;">{{ link }}
+    </a>
+</div>
+</div>
+</div>
+</body>
+</html>
